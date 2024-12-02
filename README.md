@@ -15,7 +15,7 @@ Google Sheets is a versatile tool that provides several advantages:
 - Whether you're running a personal blog, a small business, or a side project, Google Sheets can be a practical alternative for managing your subscribers.
 
 # Step-by-Step Guide to Setting Up a Newsletter Subscription System
-## 1. Create Your Google Sheet
+## Step 1 - Create Your Google Sheet
 
 Start by creating a new Google Sheet. Label the columns to store subscriber details such as:
 
@@ -31,9 +31,9 @@ Start by creating a new Google Sheet. Label the columns to store subscriber deta
 
 Google Apps Script allows you to automate data entry into your Google Sheet. Here’s how you can set it up:
 
-1. Open the Google Sheet.
-2. Navigate to Extensions > Apps Script.
-3. Paste the following code:
+1. Open the Google Sheet.[^1]
+2. Navigate to Extensions > Apps Script.[^2]
+3. Paste the following code:[^3]
 
 ```
 function doGet(e) {
@@ -183,5 +183,59 @@ if (action === 'send_email') {
     .setMimeType(ContentService.MimeType.JSON);
 }
 ```
+This script listens for POST requests, extracts the subscriber’s email address, first and last name, website url and aceptance for the Terms and Conditions and Pricacy
+When the Website Form is Submitted the Form Input Values add the user form values as data to your Google Sheet.
 
-   
+## 3. Deploy the Script as a Web App
+
+### Steps to make the AppScript accessible 
+
+Deploy your Google Sheets AppScript as WebApp to use custom HTML Form at your External Website as Newsletter Subscribe Form:
+
+1. Click Deploy > New Deployment in the Apps Script editor
+   - Choose Web App as the deployment type
+2. Set the following configurations:
+   - Description: Newsletter Subscription API
+   - Execute As: Me
+   - Who Has Access: Anyone
+   - Click Deploy and copy the generated URL.
+  
+
+
+## Benefits of This Setup
+
+### 1. Real-Time Data Management
+As subscribers sign up, their data is instantly added to your Google Sheet, which you can review or export at any time.
+
+### 2. Customizable Automation
+
+Using Google Apps Script, you can:
+
+- Send automated confirmation emails.
+- Trigger notifications when a new subscriber joins.
+- Sync data with other tools using APIs like Zapier.
+
+### 3. No Third-Party Dependencies
+Unlike subscription services like Mailchimp or ConvertKit, this setup gives you complete control over your subscriber data.
+
+## Things to Keep in Mind
+
+### 1. API Rate Limits
+Google Apps Script has execution limits, so this solution is ideal for small to medium-scale applications.
+
+### 2. Email Verification
+You can enhance the setup by integrating email verification tools to ensure data accuracy.
+
+### 3. Data Security
+Ensure proper access control to your Google Sheet. Only authorized users should have edit access.
+
+## Conclusion
+Using Google Sheets as a backend for your newsletter subscription system is a simple, cost-effective, and scalable solution. With just a few steps and some basic coding, you can have a fully functional application ready to capture subscriber details and grow your audience.
+
+This approach not only saves money but also gives you the flexibility to adapt the system to your unique requirements. Whether you're a developer, a business owner, or a blogger, Google Sheets and Apps Script can help you manage your subscribers efficiently.
+---
+Ready to implement your subscription system? Try out the code sample above and start building a seamless experience for your audience today!
+
+[^1]: Open the google sheet Which you've created in [Step 1](#Step-1-Create-Your-Google-Sheet)
+[^2]: Navigate to Extensions > Apps Script from Step 2
+[^3]: Paste the following code from Step 2
