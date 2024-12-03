@@ -234,8 +234,81 @@ Using Google Sheets as a backend for your newsletter subscription system is a si
 
 This approach not only saves money but also gives you the flexibility to adapt the system to your unique requirements. Whether you're a developer, a business owner, or a blogger, Google Sheets and Apps Script can help you manage your subscribers efficiently.
 ---
-Ready to implement your subscription system? Try out the code sample above and start building a seamless experience for your audience today!
+Ready to implement your subscription system? Try out the code sample below and start building a seamless experience for your audience today!
 
-[^1]: Open the google sheet Which you've created in [Step 1](#Step-1-Create-Your-Google-Sheet)
-[^2]: Navigate to Extensions > Apps Script from Step 2
-[^3]: Paste the following code from Step 2
+# Build a Subscription Form with Real-Time Validation Using HTML and JavaScript
+
+Creating an interactive subscription form for newsletters can seem like a daunting task, but with HTML and JavaScript, you can create a functional, user-friendly, and dynamic form. This guide provides a complete implementation using the provided code samples.
+
+## The Subscription Form
+Here’s the HTML structure for the subscription form. This form captures essential details like the subscriber's name, email, and website, along with terms and privacy acceptance.
+
+### HTML Code Sample
+
+```
+          <button id="chat-bubble" class="chat-bubble"><span class="material-symbols-outlined">chat</span></button>
+          <!-- Chat Window -->
+          <div id="chat-window" class="chat-window" style="display:none;">
+
+  <div class="chat-header">
+      <img src="https://seobookpro.com/wp-content/uploads/2023/11/seo-book-pro-logo.png" class="chat-brand-logo" alt="SEO Book Pro">
+      <button id="close-chat" class="close-chat">
+<span class="material-symbols-outlined">close</span>
+</button>
+    </div>
+
+            <div class="chat-header-form">
+
+
+
+<div id="chat-body">
+        <form class="row needs-validation" id="custom-form" novalidate>
+          <div class="col-user-first-last-name-website">
+                <!-- Email Address -->
+                <div class="col">
+                  <label for="firstNameLastName" class="form-label">First and Last Name</label>
+                  <input type="text" class="form-control" id="firstNameLastName" required>
+                  <div class="invalid-feedback">Valid First and Last Name is Required</div>
+                  <div class="invalid-feedback-exist">First and Last Name already Exist</div>
+                </div>
+                <!-- Email Address -->
+                <div class="col">
+                  <label for="yourWebsite" class="form-label">Your Website</label>
+                  <input type="text" class="form-control" id="yourWebsite" required>
+                  <div class="invalid-feedback">Valid Website is Required</div>
+                  <div class="invalid-feedback-exist">Website already Exist</div>
+                </div>
+          </div>
+
+          <div class="col-user-email-acceptance">
+                <!-- Email Address -->
+                <div class="col">
+                  <label for="emailAddress" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="emailAddress" required>
+                  <div class="invalid-feedback">Valid Email Address is Required</div>
+                  <div class="invalid-feedback-exist">Email Address already Exist</div>
+                </div>
+                <!-- Acceptance Terms and Privacy -->
+                <div class="col">
+                  <label for="acceptTermsPrivacy" class="form-label">I agree to the <a href="/terms/" target="_blank" title="Terms and Conditions | Brand Name">Terms and Conditions</a> and <a href="/privacy/" target="_blank" title="Privacy Policy | Brand Name">Privacy Policy</a> of the Brand Name website.</label>
+                  <input type="checkbox" class="form-control" id="acceptTermsPrivacy" required>
+                  <div class="invalid-feedback">Please Accept the Terms and Conditions and Privacy Policy of the Website!</div>
+                </div>
+          </div>
+                <!-- Buttons: Submit and Clear -->
+                <div class="col-md-12 pt-2 mt-2 pb-2 mb-2">
+                  <button class="btn-main" role="button" type="submit">Subscribe</button>
+                  <button id="clearForm" class="btn-dark" role="button" type="button">Clear</button>
+                </div>
+              </form>
+              <div id="response-message" class="response-message-subscribe" style="display: none;"></div>
+              <div id="loader" class="loader-subscribe" style="display: none;">
+                <div class="spinner-subscribe"></div>
+              </div>
+            </div>
+            </div>
+
+          </div>
+
+```
+
